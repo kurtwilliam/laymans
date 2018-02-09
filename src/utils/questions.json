@@ -1,0 +1,12 @@
+"questions":[
+	{
+		"id":1,
+		"title":"What is Blockchain?",
+		"type":"question",
+		"relatedQuestions": [
+
+		],
+		"answerText":"<p>In a nutshell, blockchain technology allows digital information (like a ledger) to be distributed (but not copied!) without the need of a centralized organization.</p>",
+	}
+]
+
