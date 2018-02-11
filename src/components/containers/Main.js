@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Shell from '../Shell';
+import Shell from './Shell';
 import Footer from './Footer';
 
 export default class Main extends Component {

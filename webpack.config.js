@@ -1,6 +1,6 @@
 module.exports = {
   entry: [
-    './src/index.js'
+    './src/LaymansConversationer.js'
   ],
   output: {
     path: __dirname,
