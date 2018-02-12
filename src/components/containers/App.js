@@ -20,7 +20,7 @@ import Main from './Main';
 
 export function mapStateToProps(state) {
   return {
-    
+    conversations: state.conversations,
   };
 }
 

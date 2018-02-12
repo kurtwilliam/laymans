@@ -1,17 +1,21 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 
-// // Import the root reducer
+// Import the root reducer
 // import rootReducer from '../reducers/index';
 // import baseComponents from './baseComponents';
 // import baseSettings from './baseSettings';
 // import templates from './templates/templates';
-// import h from './helpers';
+import content from './content/content'
+import h from './helpers';
+
+console.log(content)
+console.log(h)
 
 const defaultState = {
-  content: {
-    // TemplateId: h.getUrlParameter('conversation') || null,
-  }
+  components: [
+    h.getUrlParameter('conversation') || 0,
+  ],
   // relatedQuestions,
 }
 
@@ -44,19 +48,19 @@ const defaultState = {
 //   window.devToolsExtension ? window.devToolsExtension() : f => f
 // );
 
-// const store = createStore(
+const store = createStore(
 //   rootReducer,
-//   defaultState,
+  defaultState,
 //   enhancers,
-// );
+);
 
-// if (module.hot) {
-//   // Enable Webpack hot module replacement for reducers
-//   module.hot.accept('../reducers', () => {
-//     const nextRootReducer = require('../reducers/index');
-//     store.replaceReducer(nextRootReducer);
-//   });
-// }
+if (module.hot) {
+  // Enable Webpack hot module replacement for reducers
+  module.hot.accept('../reducers', () => {
+    const nextRootReducer = require('../reducers/index');
+    store.replaceReducer(nextRootReducer);
+  });
+}
 
 
-// export default store;
+export default store;

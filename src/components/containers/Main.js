@@ -4,9 +4,10 @@ import Footer from './Footer';
 
 export default class Main extends Component {
 	render() {
+		console.log(this)
 		return (
 			<div className="main">
-				<Shell />
+				<Shell {...this.props}/>
 				<Footer />
 			</div>
 		);

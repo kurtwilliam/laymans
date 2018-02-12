@@ -20,7 +20,7 @@ export default class Shell extends Component {
     console.log(this)
 		return (
 			<section className="shell">
-        {Object.keys(this.props.components).map(i => this.renderContent(i))}
+        {Object.keys(this.props.conversations).map(i => this.renderContent(i))}
       </section>
 		);
 	}
