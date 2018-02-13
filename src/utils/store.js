@@ -12,9 +12,11 @@ import h from './helpers';
 console.log(content)
 console.log(h)
 
+const conversationStarter = h.getUrlParameter('conversation')
+
 const defaultState = {
   components: [
-    h.getUrlParameter('conversation') || 0,
+    conversationStarter ? conversationStarter : "0",
   ],
   // relatedQuestions,
 }

@@ -19,6 +19,7 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
+  devtool: 'cheap-source-map',
   devServer: {
     historyApiFallback: true,
     contentBase: './'
