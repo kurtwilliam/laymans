@@ -20,9 +20,9 @@ import Main from './Main';
 
 export function mapStateToProps(state) {
 	console.log(state)
-  return {
-    conversations: state.conversations,
-  };
+	return {
+		conversations: state.conversations,
+	};
 }
 
 const App = connect(mapStateToProps)(Main);

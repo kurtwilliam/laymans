@@ -3,7 +3,7 @@
 /* eslint max-len: 0 */
 
 import store from './store';
-import { fonts } from './constants';
+// import { fonts } from './constants';
 import React from 'react';
 
 const helpers = {

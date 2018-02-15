@@ -15,7 +15,7 @@ console.log(h)
 const conversationStarter = h.getUrlParameter('conversation')
 
 const defaultState = {
-  components: [
+  conversations: [
     conversationStarter ? conversationStarter : "0",
   ],
   // relatedQuestions,
@@ -55,6 +55,8 @@ const store = createStore(
   defaultState,
 //   enhancers,
 );
+
+console.log(store)
 
 if (module.hot) {
   // Enable Webpack hot module replacement for reducers
