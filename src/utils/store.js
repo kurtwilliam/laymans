@@ -16,7 +16,7 @@ const conversationStarter = h.getUrlParameter('conversation')
 
 const defaultState = {
   conversations: [
-    conversationStarter ? conversationStarter : "0",
+    ...content[0]
   ],
   // relatedQuestions,
 }

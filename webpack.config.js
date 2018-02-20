@@ -8,16 +8,18 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [{
+    loaders: [
+    { test: /\.json$/, loader: "json-loader" },
+    {
       exclude: /node_modules/,
-      loader: 'babel',
+      loader: 'babel-loader',
       query: {
         presets: ['react', 'es2015', 'stage-1']
       }
     }]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['.js', '.jsx']
   },
   devtool: 'cheap-source-map',
   devServer: {
@@ -25,3 +27,4 @@ module.exports = {
     contentBase: './'
   }
 };
+
