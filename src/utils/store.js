@@ -2,24 +2,22 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 
 // Import the root reducer
-// import rootReducer from '../reducers/index';
-// import baseComponents from './baseComponents';
-// import baseSettings from './baseSettings';
-// import templates from './templates/templates';
+import rootReducer from '../reducers/index';
 import content from './content/content'
 import h from './helpers';
 
+// const conversationStarter = h.getUrlParameter('conversation')
 console.log(content)
-console.log(h)
-
-const conversationStarter = h.getUrlParameter('conversation')
 
 const defaultState = {
   conversations: [
-    ...content[0]
+    content
   ],
   // relatedQuestions,
 }
+
+console.log(defaultState)
+// console.log(h)
 
 // const defaultState = {
 //   template: {
@@ -51,7 +49,7 @@ const defaultState = {
 // );
 
 const store = createStore(
-//   rootReducer,
+  rootReducer,
   defaultState,
 //   enhancers,
 );

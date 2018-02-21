@@ -15,14 +15,14 @@ export default class Shell extends Component {
 	}
 
   // Render the content components
-	renderContent() {
+	// renderContent() {
 
-    return (
-      <ContentWrapper
-        {...this.props}
-      />
-    );
-	}
+ //    return (
+ //      <ContentWrapper
+ //        {...this.props}
+ //      />
+ //    );
+	// }
 
 	render() {
     console.log(this)
