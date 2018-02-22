@@ -8,11 +8,12 @@ import h from './helpers';
 
 // const conversationStarter = h.getUrlParameter('conversation')
 console.log(content)
+// We need to first try to get a conversation starting point by a link - if there is none try an id? Else start with 0.0.0 
 
 const defaultState = {
-  conversations: [
+  conversations: {
     content
-  ],
+  },
   // relatedQuestions,
 }
 

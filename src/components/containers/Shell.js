@@ -13,16 +13,17 @@ export default class Shell extends Component {
 		super();
 		this.renderContent = this.renderContent.bind(this);
 	}
+  
 
   // Render the content components
-	// renderContent() {
+	renderContent() {
 
  //    return (
  //      <ContentWrapper
  //        {...this.props}
  //      />
  //    );
-	// }
+	}
 
 	render() {
     console.log(this)
