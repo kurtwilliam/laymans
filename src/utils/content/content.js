@@ -3,11 +3,11 @@ import questions from './questions/';
 // import definitions from './definitions/';
 // import exchanges from './exchanges/';
 
-const content = {
+const content = [
   ...questions,
   // cryptos,
   // definitions,
   // exchanges,
-};
+];
 
 export default content;

@@ -1,20 +1,24 @@
-{
-	"0.0.0":{
+[
+	{
+		"id":"q0.0.0",
 		"title": "What is blockchain?",
-		"answerText": "In a nutshell, blockchain technology allows digital information (like a ledger) to be distributed (but not copied!) without the need of a centralized organization.",
-		"relQues": [ "0.1.0","0.2.0"]
+		"desc": "<p>In a nutshell, blockchain technology allows digital information (like a ledger) to be distributed (but not copied!) without the need of a centralized organization.</p>",
+		"relQues": [ "q0.1.0","q0.2.0"]
 	},
-	"0.1.0":{
+	{
+		"id":"q0.1.0",
 		"title": "...In English please?",
-		"answerText": "Let's break it down step by step! Ok, so, one person wants to send another person cryptocurrency! So... 1. The transaction is sent to a whole bunch of computers on the cryptocurrencies network (called Nodes). 2. The Nodes validate the transaction and the person sending the cryptocurrencies status (often by solving complex algorithms). 3. Once the Nodes verify the transaction it's put into a Block (along with other verified transactions) which is then added to the Blockchain. This Block on the Blockchain is usually saved by most Nodes and is permanent, so nothing can 'hack' it and add a transaction where there really wasn't one! If one Node has a transaction on their version of the Blockchain that no other Nodes have, the other Nodes don't accept it meaning fake transactions can't be recorded!",
-		"relQues": ["0.2.0","0.0.1"]
+		"desc": "<p>Let&#39;s break it down step by step! Let&#39;s say one person wants to send another person cryptocurrency!</p><ol><li>The transaction is sent to a whole bunch of computers on the cryptocurrencies network (called Nodes).</li><li>The Nodes validate the transaction and the person sending the cryptocurrencies status (often by solving complex algorithms).</li><li>Once the Nodes verify the transaction it&#39;s put into a Block (along with other approved transactions) which is then added to the Blockchain. This Block on the Blockchain is usually saved by most Nodes and is permanent, so nothing can &#39;hack&#39; it and add a transaction where there really wasn&#39;t one! If one Node has a transaction on their version of the Blockchain that no other Nodes have, the other Nodes don&#39;t accept it meaning fake transactions can&#39;t be recorded!</li></ol><p>Remember, Blockchain doesn&#39;t just need to involve cryptocurrency. We can swap cryptocurrency out with information, such as private data, database information, legal contracts, etc...</p>",
+		"relQues": ["q0.2.0","q0.0.1"]
 	},
-	"0.2.0":{
+	{
+		"id":"q0.2.0",
 		"title": "So what?",
-		"answerText": "Because a lot of people have the same version of the blockchain ledger saved on their computer, one person can't randomly add information to it without the other computers allowing them to! This means you can't edit the ledger and add fake information to it (i.e. make up transactions)."
+		"desc": "<p>Because a ton of people have the same version of the blockchain ledger saved on their computer, one person can&#39;t randomly add information to it without the other computers allowing them to! This means you can&#39;t edit the ledger and add fake information to it. It keeps information secure!</p>"
 	},
-	"0.0.1":{
+	{
+		"id":"q0.0.1",
 		"title": "Example: Voting System",
-		"answerText": "Lets take a look at how voting currently works. You go to a voting station and after proving you are allowed to vote with with Government ID you secretely write down your vote on a piece of paper, then give it to a volunteer who you trust to count your vote. You hope that your vote was properly counted, and then you see the results of the voting across the country. <br />Now, let's replace that voting system with a blockchain! Instead of going somewhere and giving someone your ballot, you log into a government website with your Government ID and vote. Once you vote you are given a confirmation #, and with that you can now visit a publicly available ledger on another government website. On this ledger, every vote that has been placed across the country is visible along with their confirmation code. This is anonymous because only the voter knows what their confirmation # is! You can search for your confirmation code to see your vote on the ledger. <br />This is revolutaionary as you no longer have to trust a centralized organization or volunteer to count your vote! It could be comparable to having a neutral organization count the votes, but with a very strict computer so there is no room for error. Every vote would be 100% accurate and not swayed by anything else whatsoever."
+		"desc": "<p>Lets take a look at how voting currently works. You go to a voting station and after proving you are allowed to vote with with Government ID you secretely write down your vote on a piece of paper, then give it to a volunteer who you trust to count your vote. You hope that your vote was properly counted, and then you see the results of the voting across the country on TV or online.</p><p>Now, let&#39;s replace that voting system with a blockchain! Instead of going somewhere and giving someone your ballot, you log into a government website with your Government ID and vote. Once you vote you are given a confirmation #, and with that you can now visit a publicly available ledger on another government website. On this ledger, every vote that has been placed across the country is visible along with their confirmation code. This is anonymous because only the voter knows what their confirmation # is! You can search for your confirmation code to see your vote on the ledger.</p><p>This is revolutionary as you no longer have to trust a centralized organization or volunteer to count your vote! It could be comparable to having a neutral organization count the votes, but with a very strict computer so there is no room for error. Every vote would be 100% accurate.</p>"
 	}
-}
+]

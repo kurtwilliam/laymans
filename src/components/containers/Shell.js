@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Question from '../presentational/Question';
-import RelatedQuestion from '../presentational/RelatedQuestion';
+// import RelatedQuestion from '../presentational/RelatedQuestion';
 // import Definition from '../presentational/Definition'; - shell doesn't choose to render this one, each individual component should depending on if there is a definition in the JSON or not
 import Crypto from '../presentational/Crypto';
 import Exchange from '../presentational/Exchange';
@@ -13,20 +13,24 @@ export default class Shell extends Component {
 		super();
 		this.renderContent = this.renderContent.bind(this);
 	}
-  
 
-  // Render the content components
-	renderContent() {
+  // Render the conversations components
+	renderContent(i) {
+    const { conversations } = this.props;
+    console.log(i);
+    console.log(conversations[i]);
 
- //    return (
- //      <ContentWrapper
- //        {...this.props}
- //      />
- //    );
+    const type = conversations[i].id.charAt(0);
+    console.log(type);
+    if (type === "q") {
+      return (
+        <Question key={type + i} index={i} {...this.props} />
+      )
+    }
 	}
 
 	render() {
-    console.log(this)
+    console.log(this.props.conversations)
 		return (
 			<section className="shell">
         {Object.keys(this.props.conversations).map(i => this.renderContent(i))}

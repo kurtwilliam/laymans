@@ -7,17 +7,17 @@ import content from './content/content'
 import h from './helpers';
 
 // const conversationStarter = h.getUrlParameter('conversation')
-console.log(content)
 // We need to first try to get a conversation starting point by a link - if there is none try an id? Else start with 0.0.0 
+const initialConvo = content.findIndex(convo => convo.id === 'q0.0.0');
+
+const conversations = {}
+conversations[0] = content[initialConvo]
 
 const defaultState = {
-  conversations: {
-    content
-  },
+  conversations,
   // relatedQuestions,
 }
 
-console.log(defaultState)
 // console.log(h)
 
 // const defaultState = {
@@ -54,8 +54,6 @@ const store = createStore(
   defaultState,
 //   enhancers,
 );
-
-console.log(store)
 
 if (module.hot) {
   // Enable Webpack hot module replacement for reducers
