@@ -1,6 +1,12 @@
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const extractSass = new ExtractTextPlugin({
+    filename: "./style/style.css",
+    disable: process.env.NODE_ENV === "development"
+});
+
 module.exports = {
   entry: [
-    './src/LaymansConversationer.js'
+    './src/LaymansConversationer.js','./style/style.scss',
   ],
   output: {
     path: __dirname,
@@ -8,14 +14,24 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [
-    {
-      exclude: /node_modules/,
-      loader: 'babel-loader',
-      query: {
-        presets: ['react', 'es2015', 'stage-1']
+    rules: [
+      { test: /(\.css$)/, include: /node_modules/, loaders: ['style-loader', 'css-loader'] },
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader", 
+          use: [ "css-loader", "sass-loader" ]
+        })
+      },
+      {test: /\.json$/, loader: "json-loader"},
+      {
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['react', 'es2015', 'stage-1']
+        },
       }
-    },{test: /\.json$/, loader: "json-loader"}]
+    ]
   },
   resolve: {
     extensions: ['.js', '.jsx']
@@ -24,6 +40,9 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     contentBase: './'
-  }
+  },
+  plugins: [
+    new ExtractTextPlugin({ filename: "./style/style.css" }),
+  ]
 };
 

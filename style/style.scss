@@ -1,0 +1,10 @@
+.main {
+	background:red;
+}
+
+@import './components/question';
+
+@import './containers/footer';
+@import './containers/main';
+
+@import './tools/normalize';

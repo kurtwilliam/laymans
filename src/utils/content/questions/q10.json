@@ -2,7 +2,7 @@
 	{
 		"id":"q0.0.0",
 		"title": "What is blockchain?",
-		"desc": "<p>In a nutshell, blockchain technology allows digital information (like a ledger) to be distributed (but not copied!) without the need of a centralized organization.</p>",
+		"desc": "<p>In a nutshell, blockchain technology allows digital information (like a <button onclick='renderDefinition()'>ledger</button>) to be distributed (but not copied!) without the need of a centralized organization.</p>",
 		"relQues": [ "q0.1.0","q0.2.0"]
 	},
 	{

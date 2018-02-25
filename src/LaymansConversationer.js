@@ -21,6 +21,8 @@ import { Provider } from 'react-redux';
 import store from './utils/store';
 import App from './components/containers/App';
 
+// require('../style/style.css');
+
 const renderApp = RApp => {
   render(
     <Provider store={store}>
