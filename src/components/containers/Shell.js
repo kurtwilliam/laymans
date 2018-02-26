@@ -5,10 +5,9 @@ import Question from '../presentational/Question';
 // import Definition from '../presentational/Definition'; - shell doesn't choose to render this one, each individual component should depending on if there is a definition in the JSON or not
 import Crypto from '../presentational/Crypto';
 import Exchange from '../presentational/Exchange';
-import addComponent from '../../actions/conversationActions';
+import { addComponent } from '../../actions/conversationActions';
 
 // Render Content - map through all components and choose which one to render! 
-
 export default class Shell extends Component {
 	constructor() {
 		super();
@@ -16,7 +15,10 @@ export default class Shell extends Component {
 		this.handleAdd = this.handleAdd.bind(this);
 	}
 
-  handleAdd(id) { console.log(id, this); this.props.dispatch(addComponent(id)); }; 
+  handleAdd(id) { 
+    console.log(id); 
+    this.props.dispatch(addComponent(id)); 
+  }; 
 
   // Render the conversations components
 	renderContent(i) {

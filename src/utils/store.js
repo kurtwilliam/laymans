@@ -44,15 +44,15 @@ const defaultState = {
 //   },
 // };
 
-// const enhancers = compose(
-//   applyMiddleware(thunk),
-//   window.devToolsExtension ? window.devToolsExtension() : f => f
-// );
+const enhancers = compose(
+  applyMiddleware(thunk),
+  window.devToolsExtension ? window.devToolsExtension() : f => f
+);
 
 const store = createStore(
   rootReducer,
   defaultState,
-//   enhancers,
+  enhancers,
 );
 
 if (module.hot) {
@@ -62,6 +62,6 @@ if (module.hot) {
     store.replaceReducer(nextRootReducer);
   });
 }
-
+console.log(store);
 
 export default store;
