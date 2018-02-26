@@ -5,32 +5,37 @@ import Question from '../presentational/Question';
 // import Definition from '../presentational/Definition'; - shell doesn't choose to render this one, each individual component should depending on if there is a definition in the JSON or not
 import Crypto from '../presentational/Crypto';
 import Exchange from '../presentational/Exchange';
+import addComponent from '../../actions/conversationActions';
 
 // Render Content - map through all components and choose which one to render! 
 
 export default class Shell extends Component {
 	constructor() {
 		super();
-		this.renderContent = this.renderContent.bind(this);
+    this.renderContent = this.renderContent.bind(this);
+		this.handleAdd = this.handleAdd.bind(this);
 	}
+
+  handleAdd(id) { console.log(id, this); this.props.dispatch(addComponent(id)); }; 
 
   // Render the conversations components
 	renderContent(i) {
     const { conversations } = this.props;
-    console.log(i);
-    console.log(conversations[i]);
 
     const type = conversations[i].id.charAt(0);
-    console.log(type);
     if (type === "q") {
       return (
-        <Question key={type + i} index={i} {...this.props} />
+        <Question 
+          key={type + i} 
+          index={i} 
+          {...this.props} 
+          handleAdd={this.handleAdd}
+        />
       )
     }
 	}
 
 	render() {
-    console.log(this.props.conversations)
 		return (
 			<section className="shell">
         {Object.keys(this.props.conversations).map(i => this.renderContent(i))}

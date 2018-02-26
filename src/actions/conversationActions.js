@@ -4,7 +4,6 @@ import Shell from '../components/containers/Shell';
 
 export const ADD_COMPONENT = 'ADD_COMPONENT';
 
-
 function addComp(key, index, compObj) {
   return {
     type: ADD_COMPONENT,
@@ -17,6 +16,7 @@ function addComp(key, index, compObj) {
 }
 
 export function addComponent(key, index, compObj) {
+  console.log(key,index,compObj)
   return (dispatch) => {
     dispatch(addComp(key, index, compObj));
   };

@@ -17,9 +17,9 @@
 
 import { connect } from 'react-redux';
 import Main from './Main';
+require('../../../style/style.scss');
 
 export function mapStateToProps(state) {
-	console.log(state)
 	return {
 		conversations: state.conversations,
 	};

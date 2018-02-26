@@ -1,48 +1,50 @@
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const extractSass = new ExtractTextPlugin({
-    filename: "./style/style.css",
-    disable: process.env.NODE_ENV === "development"
-});
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: [
-    './src/LaymansConversationer.js','./style/style.scss',
-  ],
+  entry: path.join(__dirname, 'src', 'LaymansConversationer.js'),
   output: {
-    path: __dirname,
-    publicPath: '/',
-    filename: 'bundle.js'
+    path: path.join(__dirname, 'public'),
+    filename: 'bundle.js',
   },
   module: {
     rules: [
-      { test: /(\.css$)/, include: /node_modules/, loaders: ['style-loader', 'css-loader'] },
       {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader", 
-          use: [ "css-loader", "sass-loader" ]
-        })
-      },
-      {test: /\.json$/, loader: "json-loader"},
-      {
+        test: /\.js$/,
+        include: /src/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
           presets: ['react', 'es2015', 'stage-1']
-        },
-      }
+        }
+      },
+      {
+        test: /\.scss$/,
+        use: [{
+            loader: "style-loader" // creates style nodes from JS strings
+        }, {
+            loader: "css-loader" // translates CSS into CommonJS
+        }, {
+            loader: "sass-loader" // compiles Sass to CSS
+        }]
+      },
+      {test: /\.json$/, loader: "json-loader"}
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.css', '.scss', '.json']
   },
-  devtool: 'cheap-source-map',
   devServer: {
     historyApiFallback: true,
-    contentBase: './'
+    contentBase: './public/',
+    inline:true
   },
+  devtool: 'cheap-module-eval-source-map',
   plugins: [
-    new ExtractTextPlugin({ filename: "./style/style.css" }),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'src', 'index.html'),
+      hash:true
+    })
   ]
 };
 

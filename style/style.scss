@@ -1,10 +1,10 @@
-.main {
-	background:red;
-}
-
+// components
 @import './components/question';
 
+// containers
 @import './containers/footer';
 @import './containers/main';
+@import './containers/shell';
 
+// normalize
 @import './tools/normalize';
