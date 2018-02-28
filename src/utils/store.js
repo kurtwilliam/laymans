@@ -12,6 +12,7 @@ const initialConvo = content.findIndex(convo => convo.id === 'q0.0.0');
 
 const conversations = {}
 conversations[0] = content[initialConvo]
+console.log(conversations)
 
 const defaultState = {
   conversations,

@@ -7,11 +7,13 @@ import h from '../utils/helpers';
 export default function conversation(state = {}, action) {
   switch (action.type) {
     case ADD_COMPONENT: {
-      console.log(state)
-      console.log(action)
+      const storeState = store.getState()
+      console.log('spread state',...state)
+      console.log('state',state)
+      console.log('action',action)
+      console.log('storestate',storeState)
       return {
         ...state,
-        
       };
     }
 
