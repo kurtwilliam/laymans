@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import conversation from './conversation'
+import conversationReducer from './conversation'
 
 const rootReducer = combineReducers({
-	conversation,
-	conversations: (state = {}) => state
+	conversations: (state = {}) => state,
+	baseConversations: (state = []) => state,
 });
 
 export default rootReducer;

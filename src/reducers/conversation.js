@@ -7,13 +7,25 @@ import h from '../utils/helpers';
 export default function conversation(state = {}, action) {
   switch (action.type) {
     case ADD_COMPONENT: {
-      const storeState = store.getState()
+      const { baseConversations, conversations } = store.getState();
+      const newConvo = baseConversations.find(q => q.id === action.key);
+      console.log('conversations', conversations)
+      console.log('action', action)
+      console.log(newConvo)
+      if (state.conversations === undefined) {
+        return {
+          ...state,
+          conversations: 
+            conversations,
+            newConvo,
+        }
+      }
       console.log('spread state',...state)
       console.log('state',state)
-      console.log('action',action)
-      console.log('storestate',storeState)
+      console.log(baseConversations)
       return {
         ...state,
+        conversations: [...state.conversations, newConvo]
       };
     }
 
