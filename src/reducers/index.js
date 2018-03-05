@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import conversationReducer from './conversation'
 
 const rootReducer = combineReducers({
-	conversations: (state = {}) => state,
+	conversations: conversationReducer,
 	baseConversations: (state = []) => state,
 });
 

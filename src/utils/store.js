@@ -12,10 +12,9 @@ const initialConvo = baseConversations.findIndex(convo => convo.id === 'q0.0.0')
 
 const defaultState = {
 	conversations: [
-  		baseConversations[initialConvo],
-  	],
+		baseConversations[initialConvo],
+	],
 	baseConversations,
-  // relatedQuestions,
 }
 
 const enhancers = compose(
