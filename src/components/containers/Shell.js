@@ -15,9 +15,9 @@ export default class Shell extends Component {
 		this.handleAdd = this.handleAdd.bind(this);
 	}
 
-  handleAdd(id) { 
-    console.log(id); 
-    this.props.dispatch(addComponent(id)); 
+  handleAdd(id, i) { 
+    console.log(id, i); 
+    this.props.dispatch(addComponent(id, i)); 
   }; 
 
   // Render the conversations components

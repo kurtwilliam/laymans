@@ -22,11 +22,12 @@ export default function conversation(state = {}, action) {
       //   }
       // }
       // console.log('spread state',...state)
-      if (newConvo !== undefined) {
-        return {
-          ...state,
-        };
-      }
+        
+        return [
+          ...state.slice(-1, action.index),
+          action.key,
+          ...state.slice(action.index),
+        ]
     }
 
     default:

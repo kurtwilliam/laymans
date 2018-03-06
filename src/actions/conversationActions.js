@@ -4,10 +4,11 @@ import Shell from '../components/containers/Shell';
 
 export const ADD_COMPONENT = 'ADD_COMPONENT';
 
-export function addComponent(key) {
+export function addComponent(key,index) {
   return {
     type: ADD_COMPONENT,
-    key
+    key,
+    index
   };
 }
 
