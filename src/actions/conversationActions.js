@@ -11,10 +11,3 @@ export function addComponent(key,index) {
     index
   };
 }
-
-// export function addComponent(key, index) {
-//   console.log(key, index)
-//   return (dispatch) => {
-//     dispatch(addComp(key, index));
-//   };
-// }

@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import conversationReducer from './conversation'
+import conversations from './conversation'
 
 const rootReducer = combineReducers({
-	conversations: conversationReducer,
+	conversations,
 	baseConversations: (state = []) => state,
 });
 

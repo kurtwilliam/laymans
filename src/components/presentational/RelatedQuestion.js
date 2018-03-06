@@ -6,12 +6,9 @@ import Questions from '../../utils/content/questions/';
 
 export default class Shell extends Component {
 	render() {
-    console.log(this)
+    const { index } = this.props;
+    const qContent = Questions.find(i => i.id === index)
 
-    const { thisQuestion, index } = this.props;
-    const qIndex = Questions.findIndex(i => i.id === index)
-    console.log(thisQuestion, index, qIndex)
-
-    return <li key={index} onClick={() => this.props.handleAdd(thisQuestion,qIndex)}>{Questions[qIndex].title}</li>
+    return <li key={index} onClick={() => this.props.handleAdd(qContent,index)}>{qContent.title}</li>
 	}
 }

@@ -35,6 +35,5 @@ if (module.hot) {
     store.replaceReducer(nextRootReducer);
   });
 }
-console.log(store);
 
 export default store;

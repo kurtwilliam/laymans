@@ -16,7 +16,7 @@ export default class Shell extends Component {
 	}
 
   handleAdd(id, i) { 
-    console.log(id, i); 
+    console.log(id, i);
     this.props.dispatch(addComponent(id, i)); 
   }; 
 

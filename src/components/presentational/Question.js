@@ -16,19 +16,21 @@ export default class Shell extends Component {
 	}
 
   renderDefinition() {
-    console.log('definition',this)
+    // console.log('definition',this)
   }
 
 	render() {
     const thisQuestion = this.props.conversations[this.props.index];
-    console.log(this)
+
 
 		return (
 			<div className="question-cont">
         <h2 className="question-title">{thisQuestion.title}</h2>
         <div className="question-desc">{Parser(thisQuestion.desc)}</div>
         <div className="question-related_cont">
-          <ul>{thisQuestion.relQues.map(index => <RelatedQuestion key={index} handleAdd={this.props.handleAdd} thisQuestion={thisQuestion} index={index} />)}</ul>
+          {thisQuestion.relQues &&
+          <ul>{thisQuestion.relQues.map(index => <RelatedQuestion key={index} handleAdd={this.props.handleAdd} index={index} />)}</ul>
+          }
         </div>
       </div>
 		);
