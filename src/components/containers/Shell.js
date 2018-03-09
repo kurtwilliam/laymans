@@ -16,9 +16,21 @@ export default class Shell extends Component {
 	}
 
   handleAdd(id, i) { 
-    console.log(id, i);
+    // console.log(id, i);
     this.props.dispatch(addComponent(id, i)); 
   }; 
+
+  expandOrShrinkAccordian(e) {
+    const title = e.currentTarget;
+    title.classList.add('accordian-click-active');
+
+    const expander = e.currentTarget.nextElementSibling;
+    if (expander.style.maxHeight) {
+      expander.style.maxHeight = null;
+    } else {
+      expander.style.maxHeight = expander.scrollHeight + "px";
+    }
+  }
 
   // Render the conversations components
 	renderContent(i) {
@@ -32,6 +44,7 @@ export default class Shell extends Component {
           index={i} 
           {...this.props} 
           handleAdd={this.handleAdd}
+          expandOrShrinkAccordian={this.expandOrShrinkAccordian}
         />
       )
     }

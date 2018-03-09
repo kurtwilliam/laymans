@@ -1,0 +1,37 @@
+.question {
+	&-cont {
+		
+	}
+
+	&-desc {
+		// display: none;
+		max-height: 0px;
+    	overflow: hidden;
+    	transition:all 0.2s;
+
+    	// &.accordian-expand {
+    	// 	display:block;
+    	// }
+	}
+
+	&-title {
+		cursor:pointer;
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+
+	&-list {
+
+		.related-question {
+			display:inline-block;
+			cursor:pointer;
+			margin-right:16px;
+
+			&:last-of-type {
+				margin-right:0;
+			}
+		}
+	}
+}
