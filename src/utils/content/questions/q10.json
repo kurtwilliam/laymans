@@ -2,7 +2,7 @@
 	{
 		"id":"q0.0.0",
 		"title": "What is blockchain?",
-		"desc": "<p>In a nutshell, blockchain technology allows digital information (like a <button onclick='renderDefinition()'>ledger</button>) to be distributed (but not copied!) without the need of a centralized organization.</p>",
+		"desc": "<p>In a nutshell, blockchain technology allows digital information (like a <button class='definition-onclick' data-def='d1'>ledger</button>) to be distributed (but not copied!) without the need of a centralized organization.</p>",
 		"relQues": [ "q0.1.0","q0.2.0"]
 	},
 	{
@@ -18,7 +18,7 @@
 	},
 	{
 		"id":"q0.0.1",
-		"title": "Example: Voting System",
+		"title": "Blockchain Example: Voting System",
 		"desc": "<p>Lets take a look at how voting currently works. You go to a voting station and after proving you are allowed to vote with with Government ID you secretely write down your vote on a piece of paper, then give it to a volunteer who you trust to count your vote. You hope that your vote was properly counted, and then you see the results of the voting across the country on TV or online.</p><p>Now, let&#39;s replace that voting system with a blockchain! Instead of going somewhere and giving someone your ballot, you log into a government website with your Government ID and vote. Once you vote you are given a confirmation #, and with that you can now visit a publicly available ledger on another government website. On this ledger, every vote that has been placed across the country is visible along with their confirmation code. This is anonymous because only the voter knows what their confirmation # is! You can search for your confirmation code to see your vote on the ledger.</p><p>This is revolutionary as you no longer have to trust a centralized organization or volunteer to count your vote! It could be comparable to having a neutral organization count the votes, but with a very strict computer so there is no room for error. Every vote would be 100% accurate.</p>"
 	}
 ]

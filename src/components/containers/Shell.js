@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
 
 import Question from '../presentational/Question';
-// import RelatedQuestion from '../presentational/RelatedQuestion';
-// import Definition from '../presentational/Definition'; - shell doesn't choose to render this one, each individual component should depending on if there is a definition in the JSON or not
 import Crypto from '../presentational/Crypto';
 import Exchange from '../presentational/Exchange';
-import { addComponent } from '../../actions/conversationActions';
+import { addComponent, addDefinition, removeDefinition } from '../../actions/conversationActions';
 
 // Render Content - map through all components and choose which one to render! 
 export default class Shell extends Component {
 	constructor() {
 		super();
     this.renderContent = this.renderContent.bind(this);
-		this.handleAdd = this.handleAdd.bind(this);
+    this.handleAdd = this.handleAdd.bind(this);
+    this.handleDefAdd = this.handleDefAdd.bind(this);
+		this.handleDefRemove = this.handleDefRemove.bind(this);
 	}
 
-  handleAdd(id, i) { 
-    // console.log(id, i);
-    this.props.dispatch(addComponent(id, i)); 
-  }; 
+  // ACTIONS
+  handleAdd(id, i) { this.props.dispatch(addComponent(id, i)); }; 
+  handleDefAdd(defId, containerId) { this.props.dispatch(addDefinition(defId, containerId)); }
+  handleDefRemove(defId, containerId) { this.props.dispatch(removeDefinition(defId, containerId)); }
 
   expandOrShrinkAccordian(e) {
     const title = e.currentTarget;
@@ -35,6 +35,14 @@ export default class Shell extends Component {
   // Render the conversations components
 	renderContent(i) {
     const { conversations } = this.props;
+    const helperFns = {
+      handleAdd: this.handleAdd,
+      handleDefAdd: this.handleDefAdd,
+      handleDefRemove: this.handleDefRemove,
+      expandOrShrinkAccordian: this.expandOrShrinkAccordian,
+    }
+
+    console.log(conversations, i)
 
     const type = conversations[i].id.charAt(0);
     if (type === "q") {
@@ -43,8 +51,7 @@ export default class Shell extends Component {
           key={type + i} 
           index={i} 
           {...this.props} 
-          handleAdd={this.handleAdd}
-          expandOrShrinkAccordian={this.expandOrShrinkAccordian}
+          helperFns={helperFns}
         />
       )
     }

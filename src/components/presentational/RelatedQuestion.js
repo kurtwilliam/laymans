@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Questions from '../../utils/content/questions/';
 
-export default class Shell extends Component {
+export default class RelatedQuestion extends Component {
 	render() {
     const { index } = this.props;
     const qContent = Questions.find(i => i.id === index)
