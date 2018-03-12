@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Definitions from '../../utils/content/Definitions';
+import Definitions from '../../utils/content/definitions';
 import Parser from 'html-react-parser';
 
 export default class Definition extends Component {
