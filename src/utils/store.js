@@ -4,6 +4,7 @@ import thunk from 'redux-thunk';
 // Import the root reducer
 import rootReducer from '../reducers/index';
 import baseConversations from './content/content';
+import definitions from './content/definitions.json';
 import h from './helpers';
 
 // const conversationStarter = h.getUrlParameter('conversation')
@@ -15,6 +16,7 @@ const defaultState = {
 		baseConversations[initialConvo],
 	],
 	baseConversations,
+  definitions,
 }
 
 const enhancers = compose(

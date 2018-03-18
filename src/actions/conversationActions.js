@@ -4,7 +4,7 @@ import Shell from '../components/containers/Shell';
 
 export const ADD_COMPONENT = 'ADD_COMPONENT';
 export const ADD_DEFINITION = 'ADD_DEFINITION';
-export const REMOVE_DEFINITION = 'REMOVE_DEFINITION';
+export const REMOVE_COMPONENT = 'REMOVE_COMPONENT';
 
 export function addComponent(key,index) {
   return {
@@ -19,13 +19,12 @@ export function addDefinition(defId,containerId) {
     type: ADD_DEFINITION,
     defId,
     containerId,
-  };
+  }
 }
 
-export function removeDefinition(defId,containerId) {
+export function removeComp(index) {
   return {
-    type: REMOVE_DEFINITION,
-    defId,
-    containerId,
-  };
+    type: REMOVE_COMPONENT,
+    index,
+  }
 }

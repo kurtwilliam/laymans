@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 
 import Question from '../presentational/Question';
+import Definition from '../presentational/Definition';
 import Crypto from '../presentational/Crypto';
 import Exchange from '../presentational/Exchange';
-import { addComponent, addDefinition, removeDefinition } from '../../actions/conversationActions';
+import { addComponent, addDefinition, removeComp } from '../../actions/conversationActions';
 
 // Render Content - map through all components and choose which one to render! 
 export default class Shell extends Component {
@@ -12,13 +13,13 @@ export default class Shell extends Component {
     this.renderContent = this.renderContent.bind(this);
     this.handleAdd = this.handleAdd.bind(this);
     this.handleDefAdd = this.handleDefAdd.bind(this);
-		this.handleDefRemove = this.handleDefRemove.bind(this);
+		this.handleRemove = this.handleRemove.bind(this);
 	}
 
   // ACTIONS
   handleAdd(id, i) { this.props.dispatch(addComponent(id, i)); }; 
   handleDefAdd(defId, containerId) { this.props.dispatch(addDefinition(defId, containerId)); }
-  handleDefRemove(defId, containerId) { this.props.dispatch(removeDefinition(defId, containerId)); }
+  handleRemove(i) { this.props.dispatch(removeComp(i)); }
 
   expandOrShrinkAccordian(e) {
     const title = e.currentTarget;
@@ -38,11 +39,9 @@ export default class Shell extends Component {
     const helperFns = {
       handleAdd: this.handleAdd,
       handleDefAdd: this.handleDefAdd,
-      handleDefRemove: this.handleDefRemove,
+      handleRemove: this.handleRemove,
       expandOrShrinkAccordian: this.expandOrShrinkAccordian,
     }
-
-    console.log(conversations, i)
 
     const type = conversations[i].id.charAt(0);
     if (type === "q") {
@@ -54,10 +53,20 @@ export default class Shell extends Component {
           helperFns={helperFns}
         />
       )
+    } else if (type === 'd') {
+      return (
+        <Definition 
+          key={type + i} 
+          index={i}
+          {...this.props} 
+          helperFns={helperFns}
+        />
+      )
     }
 	}
 
 	render() {
+    console.log(this.props.conversations)
 		return (
 			<section className="shell">
         {Object.keys(this.props.conversations).map(i => this.renderContent(i))}

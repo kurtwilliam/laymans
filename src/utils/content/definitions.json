@@ -2,6 +2,6 @@
 	{
 		"id":"d1",
 		"title": "Ledger",
-		"desc": "<p>A ledger usually means a book of specific financial transactions or data. In cryptocurrency's case, it is a big database full of all of the transactions that have happened for a particular currency.</p>"
+		"desc": "A ledger usually means a book of specific financial transactions or data. In cryptocurrency's case, it is a big database full of all of the transactions that have happened for a particular currency."
 	}
 ]

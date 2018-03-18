@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import RelatedQuestion from './RelatedQuestion';
-import Definition from './Definition'; 
 import Questions from '../../utils/content/questions/';
 import Parser from 'html-react-parser';
-
-// import Crypto from '../presentational/Crypto';
-// import Exchange from '../presentational/Exchange';
 
 // Render Content - map through all components and choose which one to render! 
 
@@ -29,9 +25,9 @@ export default class Shell extends Component {
 
   renderDefinition(e) {
     const defId = e.currentTarget.dataset.def;
-    const containerId = e.currentTarget.closest('.question-cont.get-id').id;
+    const containerId = e.currentTarget.closest('.question-cont.get-id').id;    
     if (defId && containerId) {
-      this.props.dispatch(this.props.helperFns.handleDefAdd(defId, containerId))
+      this.props.dispatch(this.props.helperFns.handleDefAdd(defId, containerId));
     }
   }
 

@@ -20,9 +20,11 @@ import Main from './Main';
 require('../../../style/style.scss');
 
 export function mapStateToProps(state) {
-	// console.log(state)
+	console.log(state)
 	return {
+		baseConversations: state.baseConversations,
 		conversations: state.conversations,
+		definitions: state.definitions,
 	};
 }
 

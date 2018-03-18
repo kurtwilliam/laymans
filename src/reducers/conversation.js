@@ -1,7 +1,7 @@
 import {
   ADD_COMPONENT,
   ADD_DEFINITION,
-  REMOVE_DEFINITION,
+  REMOVE_COMPONENT,
 } from '../actions/conversationActions';
 import store from '../utils/store';
 import h from '../utils/helpers';
@@ -19,57 +19,46 @@ export default function conversation(state = {}, action) {
       }
 
       return [
-        ...state.slice(action.index),
+        ...state.slice(newIndex),
         action.key,
-        ...state.slice(endOfArray,action.index),
+        ...state.slice(endOfArray,newIndex),
       ]
     }
 
     case ADD_DEFINITION: {
-      // const endOfArray = state.length;
-      // const newIndex = action.index;
-      console.log('action',action)
-      console.log('state',state)
-      // find containerId index in state
-      // find defId in state
-      // add the defId object after containerId
-      // if the next item after containerId isn't already a
+      // find containerId index in state to insert new def
+      const insertIndex = state.findIndex(key => key.id === action.containerId) + 1;
+      // find defId in definitions
+      const definition = store.getState().definitions.find(def => def.id === action.defId);
+      // if the next item after containerId exists and isn't already a definition then insert def
+      const insertHereComponent = state[insertIndex];
 
-      // check to see if this convo already exists in state, if so don't show it
-      // const existingKey = state.findIndex(key => key.id === newIndex);
-      // if (existingKey !== -1) {
-      //   return state;
-      // }
-
-      return [ 
-        ...state,
-      ]
-
-      // return [
-        // ...state.slice(action.index),
-        // action.key,
-        // ...state.slice(endOfArray,action.index),
-      // ]
-    }
-
-    case REMOVE_DEFINITION: {
-      const endOfArray = state.length;
-      const newIndex = action.index;
-      console.log('action',action)
-      console.log('state',state)
-      // console.log('state',state)
-      // console.log('state',state)
-
-      // check to see if this convo already exists in state, if so don't show it
-      // const existingKey = state.findIndex(key => key.id === newIndex);
-      // if (existingKey !== -1) {
-      //   return state;
-      // }
+      if (insertHereComponent !== undefined && insertHereComponent.id.charAt(0) === 'd') {
+        console.log('insertHereComponent !== undefined')
+        return [
+          ...state
+        ];
+      } else if (insertHereComponent !== undefined) {
+        return [
+          ...state.slice(0,insertIndex),
+          definition,
+          ...state.slice(insertIndex),
+        ];
+      }
 
       return [
-        ...state.slice(action.index),
-        action.key,
-        ...state.slice(endOfArray,action.index),
+        ...state.slice(0,insertIndex),
+        definition,
+        ...state.slice(insertIndex),
+      ];
+    }
+
+    case REMOVE_COMPONENT: {
+      // Remove item at the specified index
+      const numIndex = parseInt(action.index)
+      return [
+        ...state.slice(0, numIndex),
+        ...state.slice(numIndex + 1)
       ]
     }
 
