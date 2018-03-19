@@ -34,7 +34,6 @@ export default function conversation(state = {}, action) {
       const insertHereComponent = state[insertIndex];
 
       if (insertHereComponent !== undefined && insertHereComponent.id.charAt(0) === 'd') {
-        console.log('insertHereComponent !== undefined')
         return [
           ...state
         ];

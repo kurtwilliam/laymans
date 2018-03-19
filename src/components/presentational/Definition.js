@@ -9,7 +9,7 @@ export default class Definition extends Component {
 	render() {
 		const { index, conversations } = this.props;
 		return (
-			<div className="definition-cont" onClick={() => this.props.helperFns.handleRemove(index)}>
+			<div className="definition-cont" onClick={(e) => this.props.helperFns.handleRemove(e, index)}>
 				<h4>{conversations[index].title}</h4>
 				<p>{conversations[index].desc}</p>
 			</div>

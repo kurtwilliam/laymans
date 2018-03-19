@@ -19,7 +19,13 @@ export default class Shell extends Component {
   // ACTIONS
   handleAdd(id, i) { this.props.dispatch(addComponent(id, i)); }; 
   handleDefAdd(defId, containerId) { this.props.dispatch(addDefinition(defId, containerId)); }
-  handleRemove(i) { this.props.dispatch(removeComp(i)); }
+  handleRemove(e, i) { 
+    console.log(e.currentTarget)
+    if (typeof e !== 'number') {
+      e.currentTarget.style.maxHeight = '0px';
+    }
+    this.props.dispatch(removeComp(i)); 
+  }
 
   expandOrShrinkAccordian(e) {
     const title = e.currentTarget;
@@ -66,7 +72,6 @@ export default class Shell extends Component {
 	}
 
 	render() {
-    console.log(this.props.conversations)
 		return (
 			<section className="shell">
         {Object.keys(this.props.conversations).map(i => this.renderContent(i))}

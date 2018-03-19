@@ -4,19 +4,13 @@
 	}
 
 	&-desc {
-		// display: none;
 		max-height: 0px;
     	overflow: hidden;
     	transition:all 0.2s;
-
-    	// &.accordian-expand {
-    	// 	display:block;
-    	// }
 	}
 
 	&-title {
 		cursor:pointer;
-
 		&:hover {
 			opacity: 0.8;
 		}

@@ -27,7 +27,7 @@ export default class Shell extends Component {
     const defId = e.currentTarget.dataset.def;
     const containerId = e.currentTarget.closest('.question-cont.get-id').id;    
     if (defId && containerId) {
-      this.props.dispatch(this.props.helperFns.handleDefAdd(defId, containerId));
+      this.props.helperFns.handleDefAdd(defId, containerId);
     }
   }
 
